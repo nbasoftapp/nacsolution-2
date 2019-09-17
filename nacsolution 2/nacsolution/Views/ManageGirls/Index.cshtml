@@ -1,0 +1,208 @@
+﻿@model IEnumerable<nacsolution.Models.NBA_Agwy>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PGTAdminLayout.cshtml";
+}
+
+<h2>Manage Girls</h2>
+
+<html>
+<!--
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Manage Girls</title>-->
+<!------ Include the above in your HEAD tag ---------->
+<!--
+<style>
+    span.field-validation-error {
+        color: red;
+    }
+</style>
+
+</head>
+-->
+<body>
+
+    @*<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">nacs</a>
+
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Manage Roles", "Index", "Role")</li>
+                    <li>@Html.ActionLink("Manage Users", "Index", "UsersRegistration")</li>
+                    <li>@Html.ActionLink("Manage Sub-Recipients", "Index", "PR")</li>
+                    <li>@Html.ActionLink("Manage Girls", "Index", "ManageGirls")</li>
+
+
+                </ul>
+
+            </div>
+            <span class="icon-bar"></span>
+            <div class="" navbar-collapse collapse"">
+
+            </div>
+        </div>
+    </nav>*@
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.known_as)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.race)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.type_of_identification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateOfbirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.place_of_birth)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.maiden_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.town_village)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.uic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.phone_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.alternative__number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.alternative_number_relationship)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.attended_school)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name_of_school)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.higest_grade_passed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.currrent_occupation)
+            </th>*@
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.known_as)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.race)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type_of_identification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateOfbirth)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.place_of_birth)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.maiden_name)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.town_village)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.uic)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.phone_number)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.alternative__number)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.alternative_number_relationship)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.attended_school)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.name_of_school)
+            </td>
+            <td hidden>
+                
+                @Html.DisplayFor(modelItem => item.higest_grade_passed)
+            </td>
+            <td hidden>
+                
+                @Html.DisplayFor(modelItem => item.currrent_occupation)
+                
+            <td/>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.AGWY_ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.AGWY_ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.AGWY_ID })
+            </td>
+        </tr>
+        }
+
+    </table>
+</body>
+</html>

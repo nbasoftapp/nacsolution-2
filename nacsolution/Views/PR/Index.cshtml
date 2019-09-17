@@ -1,0 +1,101 @@
+﻿@model IEnumerable<nacsolution.Models.NBA_PR>
+
+@{
+    ViewBag.Title = "Index";
+  
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">nacs</a>
+
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Manage Roles", "Index", "Role")</li>
+                <li>@Html.ActionLink("Manage Users", "Index", "UsersRegistration")</li>
+                <li>@Html.ActionLink("Manage Sub-Recipients", "Index", "PR")</li>
+                <li>@Html.ActionLink("Manage Girls", "Index", "ManageGirls")</li>
+
+
+            </ul>
+
+        </div>
+        <span class="icon-bar"></span>
+        <div class="" navbar-collapse collapse"">
+
+        </div>
+    </div>
+</nav>
+
+<h2>Manage Sub-Recipients</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PR_SR_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PR_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SR_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.province)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.district)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subdistrict)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date_entered)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PR_SR_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PR_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SR_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.province)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.district)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.subdistrict)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date_entered)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

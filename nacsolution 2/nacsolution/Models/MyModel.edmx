@@ -1,0 +1,1669 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MyDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Answers">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AnswerText" Type="varchar(max)" />
+          <Property Name="QuestionID" Type="int" />
+        </EntityType>
+        <EntityType Name="Choices">
+          <Key>
+            <PropertyRef Name="ChoiceID" />
+          </Key>
+          <Property Name="ChoiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChoiceText" Type="varchar(max)" />
+          <Property Name="QuestionID" Type="int" />
+        </EntityType>
+        <EntityType Name="NBA_ADMIN">
+          <Key>
+            <PropertyRef Name="ADMIN_ID" />
+          </Key>
+          <Property Name="ADMIN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Lname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsEmailVerified" Type="int" Nullable="false" />
+          <Property Name="VerificationCode" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ROLE_ID" Type="int" Nullable="false" />
+          <Property Name="SYSUSER_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="NBA_Agwy">
+          <Key>
+            <PropertyRef Name="AGWY_ID" />
+          </Key>
+          <Property Name="AGWY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="surname" Type="varchar" MaxLength="45" />
+          <Property Name="known_as" Type="varchar" MaxLength="50" />
+          <Property Name="gender" Type="int" />
+          <Property Name="age" Type="varchar" MaxLength="20" />
+          <Property Name="type_of_identification" Type="int" />
+          <Property Name="idno" Type="varchar" MaxLength="20" />
+          <Property Name="dateOfbirth" Type="datetime" />
+          <Property Name="maiden_name" Type="varchar" MaxLength="50" />
+          <Property Name="house_number" Type="varchar" MaxLength="20" />
+          <Property Name="street_name" Type="varchar" MaxLength="50" />
+          <Property Name="town_village_address" Type="varchar" MaxLength="50" />
+          <Property Name="town_village" Type="varchar" MaxLength="20" />
+          <Property Name="uic" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="45" />
+          <Property Name="phone_number" Type="int" />
+          <Property Name="alternative_number" Type="int" />
+          <Property Name="alternative_number_relationship" Type="varchar" MaxLength="50" />
+          <Property Name="attended_school" Type="nchar" MaxLength="10" />
+          <Property Name="name_of_school" Type="varchar" MaxLength="50" />
+          <Property Name="grade" Type="varchar" MaxLength="50" />
+          <Property Name="higest_grade_passed" Type="int" />
+          <Property Name="currrent_occupation" Type="varchar" MaxLength="50" />
+          <Property Name="approval_flag" Type="varchar" MaxLength="1" />
+          <Property Name="concent_flag" Type="varchar" MaxLength="1" />
+          <Property Name="mimetype" Type="varbinary(max)" />
+          <Property Name="imagedata" Type="varbinary(max)" />
+          <Property Name="describe_living" Type="varchar" MaxLength="100" />
+          <Property Name="reg_date" Type="datetime" />
+          <Property Name="last_updated" Type="datetime" />
+          <Property Name="last_login" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="ID" Type="int" />
+          <Property Name="SEMESTER_ID" Type="int" />
+          <Property Name="SYS_USER_ID" Type="int" />
+          <Property Name="DOCUMENT_ID" Type="int" />
+          <Property Name="Core_ID" Type="int" />
+          <Property Name="messageInquiry" Type="int" />
+          <Property Name="EntryPoint_ID" Type="int" />
+          <Property Name="HighSchoolQuizz_ID" Type="int" />
+          <Property Name="RISK_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="NBA_Audit_trail">
+          <Key>
+            <PropertyRef Name="CHANGE_ID" />
+          </Key>
+          <Property Name="CHANGE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tablename" Type="varchar" MaxLength="20" />
+          <Property Name="fieldname" Type="varchar" MaxLength="20" />
+          <Property Name="record_id" Type="int" />
+          <Property Name="oldvalue" Type="varchar" MaxLength="100" />
+          <Property Name="newvalue" Type="varchar" MaxLength="100" />
+          <Property Name="changedate" Type="datetime" />
+          <Property Name="changeby" Type="varchar" MaxLength="20" />
+          <Property Name="SYS_USER_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="NBA_Core">
+          <Key>
+            <PropertyRef Name="CORE_ID" />
+          </Key>
+          <Property Name="CORE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="150" />
+          <Property Name="TB_assess" Type="varchar" MaxLength="50" />
+          <Property Name="HIV_assess" Type="varchar" MaxLength="50" />
+          <Property Name="Condom_educate" Type="varchar" MaxLength="50" />
+          <Property Name="STI_assess" Type="varchar" MaxLength="50" />
+          <Property Name="RISK_ID" Type="int" />
+          <Property Name="AGWY_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="NBA_Documents">
+          <Key>
+            <PropertyRef Name="DOCUMENT_ID" />
+          </Key>
+          <Property Name="DOCUMENT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="doc_name" Type="varchar" MaxLength="150" />
+          <Property Name="description" Type="varchar" MaxLength="500" />
+          <Property Name="classification" Type="varchar" MaxLength="150" />
+          <Property Name="doc_date" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="NBA_Entry_Points">
+          <Key>
+            <PropertyRef Name="ENTRY_ID" />
+          </Key>
+          <Property Name="ENTRY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="50" />
+          <Property Name="x_cordinates" Type="varchar" MaxLength="100" />
+          <Property Name="y_cordinates" Type="varchar" MaxLength="100" />
+          <Property Name="ID" Type="int" />
+        </EntityType>
+        <EntityType Name="NBA_Gender">
+          <Key>
+            <PropertyRef Name="GenderID" />
+          </Key>
+          <Property Name="GenderID" Type="int" Nullable="false" />
+          <Property Name="GenderType" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NBA_Grade">
+          <Key>
+            <PropertyRef Name="Grade_ID" />
+          </Key>
+          <Property Name="Grade_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="NBA_HighSchoolQuizz">
+          <Key>
+            <PropertyRef Name="HighSchoolQuiz_ID" />
+          </Key>
+          <Property Name="HighSchoolQuiz_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NBA_Identification">
+          <Key>
+            <PropertyRef Name="Identification_ID" />
+          </Key>
+          <Property Name="Identification_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NBA_MessageID">
+          <Key>
+            <PropertyRef Name="MessageID" />
+          </Key>
+          <Property Name="MessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="NBA_Occupation">
+          <Key>
+            <PropertyRef Name="Occupation_ID" />
+          </Key>
+          <Property Name="Occupation_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NBA_Period_Maintenance">
+          <Key>
+            <PropertyRef Name="Period_ID" />
+          </Key>
+          <Property Name="Period_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="period_name" Type="varchar" MaxLength="50" />
+          <Property Name="period_start_date" Type="datetime" />
+          <Property Name="period_end_date" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="SERVICEPLAN_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NBA_PR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PR_SR_ID" Type="varchar" MaxLength="50" />
+          <Property Name="PR_name" Type="varchar" MaxLength="50" />
+          <Property Name="SR_name" Type="varchar" MaxLength="50" />
+          <Property Name="province" Type="varchar" MaxLength="50" />
+          <Property Name="district" Type="varchar" MaxLength="50" />
+          <Property Name="subdistrict" Type="varchar" MaxLength="50" />
+          <Property Name="date_entered" Type="datetime" />
+        </EntityType>
+        <EntityType Name="NBA_RiskAssessment">
+          <Key>
+            <PropertyRef Name="RISK_ID" />
+          </Key>
+          <Property Name="RISK_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QUESTION_ID" Type="int" />
+          <Property Name="ANSWER_ID" Type="int" />
+          <Property Name="risk_description" Type="varchar" MaxLength="500" />
+          <Property Name="classification" Type="varchar" MaxLength="500" />
+          <Property Name="SERVICE_PLAN_ID" Type="int" />
+          <Property Name="SYS_USER_ID" Type="int" />
+          <Property Name="SELF_ASSESS_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="NBA_Role">
+          <Key>
+            <PropertyRef Name="ROLE_ID" />
+          </Key>
+          <Property Name="ROLE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="role_name" Type="varchar" MaxLength="20" />
+          <Property Name="role_created_date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NBA_SemesterMaintenance">
+          <Key>
+            <PropertyRef Name="SEMESTER_ID" />
+          </Key>
+          <Property Name="SEMESTER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="semester_name" Type="varchar" MaxLength="150" />
+          <Property Name="uid" Type="varchar" MaxLength="50" />
+          <Property Name="semester_start_date" Type="datetime" />
+          <Property Name="semester_end_date" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="150" />
+          <Property Name="SERVICEPLAN_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="NBA_ServicePlan">
+          <Key>
+            <PropertyRef Name="SERVICEPLAN_ID" />
+          </Key>
+          <Property Name="SERVICEPLAN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="service_plan_description" Type="varchar" MaxLength="500" />
+          <Property Name="DOCUMENT_ID" Type="int" />
+          <Property Name="AGWY_ID" Type="int" />
+          <Property Name="TASK_ID" Type="int" />
+          <Property Name="SYS_USERS_ID" Type="int" />
+          <Property Name="SEMESTER_ID" Type="int" />
+          <Property Name="RISK_ID" Type="int" />
+          <Property Name="CORE_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="NBA_ServicePlanIntervention">
+          <Key>
+            <PropertyRef Name="INTERVENTION_ID" />
+          </Key>
+          <Property Name="INTERVENTION_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="150" />
+          <Property Name="service_ui" Type="varchar" MaxLength="50" />
+          <Property Name="service_delivery_date" Type="datetime" />
+          <Property Name="semester_end_date" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="150" />
+          <Property Name="SEMESTER_ID" Type="int" />
+          <Property Name="SYS_USER_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="NBA_Status">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatusValue" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="NBA_SYS_Users">
+          <Key>
+            <PropertyRef Name="SYS_USER_ID" />
+          </Key>
+          <Property Name="SYS_USER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="surname" Type="varchar" MaxLength="50" />
+          <Property Name="username" Type="varchar" MaxLength="45" />
+          <Property Name="password" Type="nvarchar" MaxLength="245" />
+          <Property Name="mobile" Type="int" />
+          <Property Name="employee_id" Type="varchar" MaxLength="50" />
+          <Property Name="organization" Type="varchar" MaxLength="45" />
+          <Property Name="province" Type="varchar" MaxLength="50" />
+          <Property Name="district" Type="varchar" MaxLength="50" />
+          <Property Name="subdistrict" Type="varchar" MaxLength="50" />
+          <Property Name="image" Type="varchar" MaxLength="50" />
+          <Property Name="SR_name" Type="varchar" MaxLength="50" />
+          <Property Name="Entry_ID" Type="int" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="sys_IsEmailVerified" Type="bit" />
+          <Property Name="sys_VerificationCode" Type="uniqueidentifier" />
+          <Property Name="reg_date" Type="datetime" />
+          <Property Name="last_updated" Type="datetime" />
+          <Property Name="last_login" Type="datetime" />
+          <Property Name="ROLE_ID" Type="int" />
+          <Property Name="ID" Type="int" />
+        </EntityType>
+        <EntityType Name="NBA_TaskDiary">
+          <Key>
+            <PropertyRef Name="TASK_ID" />
+          </Key>
+          <Property Name="TASK_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="150" />
+          <Property Name="datetime_scheduled" Type="datetime" />
+          <Property Name="appointment_length" Type="varchar" MaxLength="150" />
+          <Property Name="status" Type="varchar" MaxLength="150" />
+          <Property Name="SYS_USER_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="Questions">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionText" Type="varchar(max)" />
+          <Property Name="QuizID" Type="int" />
+        </EntityType>
+        <EntityType Name="Quiz">
+          <Key>
+            <PropertyRef Name="QuizID" />
+          </Key>
+          <Property Name="QuizID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuizName" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="varchar" MaxLength="50" />
+          <Property Name="ProfilImage" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Answers_Answers">
+          <End Role="Questions" Type="Self.Questions" Multiplicity="0..1" />
+          <End Role="Answers" Type="Self.Answers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Answers">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Choices_Questions">
+          <End Role="Questions" Type="Self.Questions" Multiplicity="1" />
+          <End Role="Choices" Type="Self.Choices" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Choices">
+              <PropertyRef Name="ChoiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_Agwy">
+          <End Role="NBA_MessageID" Type="Self.NBA_MessageID" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_MessageID">
+              <PropertyRef Name="MessageID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="messageInquiry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_Core">
+          <End Role="NBA_Core" Type="Self.NBA_Core" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Core">
+              <PropertyRef Name="CORE_ID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="Core_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_Documents">
+          <End Role="NBA_Documents" Type="Self.NBA_Documents" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Documents">
+              <PropertyRef Name="DOCUMENT_ID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="DOCUMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_Entry_Points">
+          <End Role="NBA_Entry_Points" Type="Self.NBA_Entry_Points" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Entry_Points">
+              <PropertyRef Name="ENTRY_ID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="EntryPoint_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_Gender">
+          <End Role="NBA_Gender" Type="Self.NBA_Gender" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Gender">
+              <PropertyRef Name="GenderID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_Grade">
+          <End Role="NBA_Grade" Type="Self.NBA_Grade" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Grade">
+              <PropertyRef Name="Grade_ID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="higest_grade_passed" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_HighSchoolQuizz">
+          <End Role="NBA_HighSchoolQuizz" Type="Self.NBA_HighSchoolQuizz" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_HighSchoolQuizz">
+              <PropertyRef Name="HighSchoolQuiz_ID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="HighSchoolQuizz_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_Identification">
+          <End Role="NBA_Identification" Type="Self.NBA_Identification" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Identification">
+              <PropertyRef Name="Identification_ID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="type_of_identification" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_Occupation">
+          <End Role="NBA_Occupation" Type="Self.NBA_Occupation" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Occupation">
+              <PropertyRef Name="Occupation_ID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="currrent_occupation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_SYS_Users">
+          <End Role="NBA_SYS_Users" Type="Self.NBA_SYS_Users" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_SYS_Users">
+              <PropertyRef Name="SYS_USER_ID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="SYS_USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Entry_Points_NBA_PR">
+          <End Role="NBA_PR" Type="Self.NBA_PR" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NBA_Entry_Points" Type="Self.NBA_Entry_Points" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_PR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NBA_Entry_Points">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_period_Maintenance_NBA_period_Maintenance">
+          <End Role="NBA_Period_Maintenance" Type="Self.NBA_Period_Maintenance" Multiplicity="1" />
+          <End Role="NBA_Period_Maintenance1" Type="Self.NBA_Period_Maintenance" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Period_Maintenance">
+              <PropertyRef Name="Period_ID" />
+            </Principal>
+            <Dependent Role="NBA_Period_Maintenance1">
+              <PropertyRef Name="Period_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_SYS_Users_NBA_PR">
+          <End Role="NBA_PR" Type="Self.NBA_PR" Multiplicity="0..1" />
+          <End Role="NBA_SYS_Users" Type="Self.NBA_SYS_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_PR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NBA_SYS_Users">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_SYS_Users_NBA_Role">
+          <End Role="NBA_Role" Type="Self.NBA_Role" Multiplicity="0..1" />
+          <End Role="NBA_SYS_Users" Type="Self.NBA_SYS_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Role">
+              <PropertyRef Name="ROLE_ID" />
+            </Principal>
+            <Dependent Role="NBA_SYS_Users">
+              <PropertyRef Name="ROLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Questions_Quiz">
+          <End Role="Quiz" Type="Self.Quiz" Multiplicity="0..1" />
+          <End Role="Questions" Type="Self.Questions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quiz">
+              <PropertyRef Name="QuizID" />
+            </Principal>
+            <Dependent Role="Questions">
+              <PropertyRef Name="QuizID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MyDatabaseModelStoreContainer">
+          <EntitySet Name="Answers" EntityType="Self.Answers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Choices" EntityType="Self.Choices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_ADMIN" EntityType="Self.NBA_ADMIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_Agwy" EntityType="Self.NBA_Agwy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_Audit_trail" EntityType="Self.NBA_Audit_trail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_Core" EntityType="Self.NBA_Core" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_Documents" EntityType="Self.NBA_Documents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_Entry_Points" EntityType="Self.NBA_Entry_Points" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_Gender" EntityType="Self.NBA_Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_Grade" EntityType="Self.NBA_Grade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_HighSchoolQuizz" EntityType="Self.NBA_HighSchoolQuizz" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_Identification" EntityType="Self.NBA_Identification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_MessageID" EntityType="Self.NBA_MessageID" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_Occupation" EntityType="Self.NBA_Occupation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_Period_Maintenance" EntityType="Self.NBA_Period_Maintenance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_PR" EntityType="Self.NBA_PR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_RiskAssessment" EntityType="Self.NBA_RiskAssessment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_Role" EntityType="Self.NBA_Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_SemesterMaintenance" EntityType="Self.NBA_SemesterMaintenance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_ServicePlan" EntityType="Self.NBA_ServicePlan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_ServicePlanIntervention" EntityType="Self.NBA_ServicePlanIntervention" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_Status" EntityType="Self.NBA_Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_SYS_Users" EntityType="Self.NBA_SYS_Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBA_TaskDiary" EntityType="Self.NBA_TaskDiary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Quiz" EntityType="Self.Quiz" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Answers_Answers" Association="Self.FK_Answers_Answers">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="Answers" EntitySet="Answers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Choices_Questions" Association="Self.FK_Choices_Questions">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="Choices" EntitySet="Choices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_Agwy" Association="Self.FK_NBA_Agwy_NBA_Agwy">
+            <End Role="NBA_MessageID" EntitySet="NBA_MessageID" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_Core" Association="Self.FK_NBA_Agwy_NBA_Core">
+            <End Role="NBA_Core" EntitySet="NBA_Core" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_Documents" Association="Self.FK_NBA_Agwy_NBA_Documents">
+            <End Role="NBA_Documents" EntitySet="NBA_Documents" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_Entry_Points" Association="Self.FK_NBA_Agwy_NBA_Entry_Points">
+            <End Role="NBA_Entry_Points" EntitySet="NBA_Entry_Points" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_Gender" Association="Self.FK_NBA_Agwy_NBA_Gender">
+            <End Role="NBA_Gender" EntitySet="NBA_Gender" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_Grade" Association="Self.FK_NBA_Agwy_NBA_Grade">
+            <End Role="NBA_Grade" EntitySet="NBA_Grade" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_HighSchoolQuizz" Association="Self.FK_NBA_Agwy_NBA_HighSchoolQuizz">
+            <End Role="NBA_HighSchoolQuizz" EntitySet="NBA_HighSchoolQuizz" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_Identification" Association="Self.FK_NBA_Agwy_NBA_Identification">
+            <End Role="NBA_Identification" EntitySet="NBA_Identification" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_Occupation" Association="Self.FK_NBA_Agwy_NBA_Occupation">
+            <End Role="NBA_Occupation" EntitySet="NBA_Occupation" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_SYS_Users" Association="Self.FK_NBA_Agwy_NBA_SYS_Users">
+            <End Role="NBA_SYS_Users" EntitySet="NBA_SYS_Users" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Entry_Points_NBA_PR" Association="Self.FK_NBA_Entry_Points_NBA_PR">
+            <End Role="NBA_PR" EntitySet="NBA_PR" />
+            <End Role="NBA_Entry_Points" EntitySet="NBA_Entry_Points" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_period_Maintenance_NBA_period_Maintenance" Association="Self.FK_NBA_period_Maintenance_NBA_period_Maintenance">
+            <End Role="NBA_Period_Maintenance" EntitySet="NBA_Period_Maintenance" />
+            <End Role="NBA_Period_Maintenance1" EntitySet="NBA_Period_Maintenance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_SYS_Users_NBA_PR" Association="Self.FK_NBA_SYS_Users_NBA_PR">
+            <End Role="NBA_PR" EntitySet="NBA_PR" />
+            <End Role="NBA_SYS_Users" EntitySet="NBA_SYS_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_SYS_Users_NBA_Role" Association="Self.FK_NBA_SYS_Users_NBA_Role">
+            <End Role="NBA_Role" EntitySet="NBA_Role" />
+            <End Role="NBA_SYS_Users" EntitySet="NBA_SYS_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Questions_Quiz" Association="Self.FK_Questions_Quiz">
+            <End Role="Quiz" EntitySet="Quiz" />
+            <End Role="Questions" EntitySet="Questions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MyDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Answer">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AnswerText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="QuestionID" Type="Int32" />
+          <NavigationProperty Name="Question" Relationship="Self.FK_Answers_Answers" FromRole="Answers" ToRole="Questions" />
+        </EntityType>
+        <EntityType Name="Choice">
+          <Key>
+            <PropertyRef Name="ChoiceID" />
+          </Key>
+          <Property Name="ChoiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChoiceText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="QuestionID" Type="Int32" />
+          <NavigationProperty Name="Question" Relationship="Self.FK_Choices_Questions" FromRole="Choices" ToRole="Questions" />
+        </EntityType>
+        <EntityType Name="NBA_ADMIN">
+          <Key>
+            <PropertyRef Name="ADMIN_ID" />
+          </Key>
+          <Property Name="ADMIN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="EmailID" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsEmailVerified" Type="Int32" Nullable="false" />
+          <Property Name="VerificationCode" Type="Guid" Nullable="false" />
+          <Property Name="ROLE_ID" Type="Int32" Nullable="false" />
+          <Property Name="SYSUSER_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="NBA_Agwy">
+          <Key>
+            <PropertyRef Name="AGWY_ID" />
+          </Key>
+          <Property Name="AGWY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="surname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="known_as" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="Int32" />
+          <Property Name="age" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="type_of_identification" Type="Int32" />
+          <Property Name="idno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="dateOfbirth" Type="DateTime" Precision="3" />
+          <Property Name="maiden_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="house_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="street_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="town_village_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="town_village" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="uic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="phone_number" Type="Int32" />
+          <Property Name="alternative_number" Type="Int32" />
+          <Property Name="alternative_number_relationship" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="attended_school" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="name_of_school" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="grade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="higest_grade_passed" Type="Int32" />
+          <Property Name="currrent_occupation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="approval_flag" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="concent_flag" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="mimetype" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="imagedata" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="describe_living" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="reg_date" Type="DateTime" Precision="3" />
+          <Property Name="last_updated" Type="DateTime" Precision="3" />
+          <Property Name="last_login" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="Int32" />
+          <Property Name="SEMESTER_ID" Type="Int32" />
+          <Property Name="SYS_USER_ID" Type="Int32" />
+          <Property Name="DOCUMENT_ID" Type="Int32" />
+          <Property Name="Core_ID" Type="Int32" />
+          <Property Name="messageInquiry" Type="Int32" />
+          <Property Name="EntryPoint_ID" Type="Int32" />
+          <Property Name="HighSchoolQuizz_ID" Type="Int32" />
+          <Property Name="RISK_ID" Type="Int32" />
+          <NavigationProperty Name="NBA_MessageID" Relationship="Self.FK_NBA_Agwy_NBA_Agwy" FromRole="NBA_Agwy" ToRole="NBA_MessageID" />
+          <NavigationProperty Name="NBA_Core" Relationship="Self.FK_NBA_Agwy_NBA_Core" FromRole="NBA_Agwy" ToRole="NBA_Core" />
+          <NavigationProperty Name="NBA_Documents" Relationship="Self.FK_NBA_Agwy_NBA_Documents" FromRole="NBA_Agwy" ToRole="NBA_Documents" />
+          <NavigationProperty Name="NBA_Entry_Points" Relationship="Self.FK_NBA_Agwy_NBA_Entry_Points" FromRole="NBA_Agwy" ToRole="NBA_Entry_Points" />
+          <NavigationProperty Name="NBA_Gender" Relationship="Self.FK_NBA_Agwy_NBA_Gender" FromRole="NBA_Agwy" ToRole="NBA_Gender" />
+          <NavigationProperty Name="NBA_Grade" Relationship="Self.FK_NBA_Agwy_NBA_Grade" FromRole="NBA_Agwy" ToRole="NBA_Grade" />
+          <NavigationProperty Name="NBA_HighSchoolQuizz" Relationship="Self.FK_NBA_Agwy_NBA_HighSchoolQuizz" FromRole="NBA_Agwy" ToRole="NBA_HighSchoolQuizz" />
+          <NavigationProperty Name="NBA_Identification" Relationship="Self.FK_NBA_Agwy_NBA_Identification" FromRole="NBA_Agwy" ToRole="NBA_Identification" />
+          <NavigationProperty Name="NBA_Occupation" Relationship="Self.FK_NBA_Agwy_NBA_Occupation" FromRole="NBA_Agwy" ToRole="NBA_Occupation" />
+          <NavigationProperty Name="NBA_SYS_Users" Relationship="Self.FK_NBA_Agwy_NBA_SYS_Users" FromRole="NBA_Agwy" ToRole="NBA_SYS_Users" />
+        </EntityType>
+        <EntityType Name="NBA_Audit_trail">
+          <Key>
+            <PropertyRef Name="CHANGE_ID" />
+          </Key>
+          <Property Name="CHANGE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tablename" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fieldname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="record_id" Type="Int32" />
+          <Property Name="oldvalue" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="newvalue" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="changedate" Type="DateTime" Precision="3" />
+          <Property Name="changeby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SYS_USER_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="NBA_Core">
+          <Key>
+            <PropertyRef Name="CORE_ID" />
+          </Key>
+          <Property Name="CORE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="TB_assess" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HIV_assess" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Condom_educate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STI_assess" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RISK_ID" Type="Int32" />
+          <Property Name="AGWY_ID" Type="Int32" />
+          <NavigationProperty Name="NBA_Agwy" Relationship="Self.FK_NBA_Agwy_NBA_Core" FromRole="NBA_Core" ToRole="NBA_Agwy" />
+        </EntityType>
+        <EntityType Name="NBA_Documents">
+          <Key>
+            <PropertyRef Name="DOCUMENT_ID" />
+          </Key>
+          <Property Name="DOCUMENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="doc_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="classification" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="doc_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NBA_Agwy" Relationship="Self.FK_NBA_Agwy_NBA_Documents" FromRole="NBA_Documents" ToRole="NBA_Agwy" />
+        </EntityType>
+        <EntityType Name="NBA_Entry_Points">
+          <Key>
+            <PropertyRef Name="ENTRY_ID" />
+          </Key>
+          <Property Name="ENTRY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="x_cordinates" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="y_cordinates" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="Int32" />
+          <NavigationProperty Name="NBA_Agwy" Relationship="Self.FK_NBA_Agwy_NBA_Entry_Points" FromRole="NBA_Entry_Points" ToRole="NBA_Agwy" />
+          <NavigationProperty Name="NBA_PR" Relationship="Self.FK_NBA_Entry_Points_NBA_PR" FromRole="NBA_Entry_Points" ToRole="NBA_PR" />
+        </EntityType>
+        <EntityType Name="NBA_Gender">
+          <Key>
+            <PropertyRef Name="GenderID" />
+          </Key>
+          <Property Name="GenderID" Type="Int32" Nullable="false" />
+          <Property Name="GenderType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NBA_Agwy" Relationship="Self.FK_NBA_Agwy_NBA_Gender" FromRole="NBA_Gender" ToRole="NBA_Agwy" />
+        </EntityType>
+        <EntityType Name="NBA_Grade">
+          <Key>
+            <PropertyRef Name="Grade_ID" />
+          </Key>
+          <Property Name="Grade_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NBA_Agwy" Relationship="Self.FK_NBA_Agwy_NBA_Grade" FromRole="NBA_Grade" ToRole="NBA_Agwy" />
+        </EntityType>
+        <EntityType Name="NBA_HighSchoolQuizz">
+          <Key>
+            <PropertyRef Name="HighSchoolQuiz_ID" />
+          </Key>
+          <Property Name="HighSchoolQuiz_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NBA_Agwy" Relationship="Self.FK_NBA_Agwy_NBA_HighSchoolQuizz" FromRole="NBA_HighSchoolQuizz" ToRole="NBA_Agwy" />
+        </EntityType>
+        <EntityType Name="NBA_Identification">
+          <Key>
+            <PropertyRef Name="Identification_ID" />
+          </Key>
+          <Property Name="Identification_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NBA_Agwy" Relationship="Self.FK_NBA_Agwy_NBA_Identification" FromRole="NBA_Identification" ToRole="NBA_Agwy" />
+        </EntityType>
+        <EntityType Name="NBA_MessageID">
+          <Key>
+            <PropertyRef Name="MessageID" />
+          </Key>
+          <Property Name="MessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="NBA_Agwy" Relationship="Self.FK_NBA_Agwy_NBA_Agwy" FromRole="NBA_MessageID" ToRole="NBA_Agwy" />
+        </EntityType>
+        <EntityType Name="NBA_Occupation">
+          <Key>
+            <PropertyRef Name="Occupation_ID" />
+          </Key>
+          <Property Name="Occupation_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NBA_Agwy" Relationship="Self.FK_NBA_Agwy_NBA_Occupation" FromRole="NBA_Occupation" ToRole="NBA_Agwy" />
+        </EntityType>
+        <EntityType Name="NBA_Period_Maintenance">
+          <Key>
+            <PropertyRef Name="Period_ID" />
+          </Key>
+          <Property Name="Period_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="period_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="period_start_date" Type="DateTime" Precision="3" />
+          <Property Name="period_end_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SERVICEPLAN_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="NBA_Period_Maintenance1" Relationship="Self.FK_NBA_period_Maintenance_NBA_period_Maintenance" FromRole="NBA_Period_Maintenance" ToRole="NBA_Period_Maintenance1" />
+          <NavigationProperty Name="NBA_Period_Maintenance2" Relationship="Self.FK_NBA_period_Maintenance_NBA_period_Maintenance" FromRole="NBA_Period_Maintenance1" ToRole="NBA_Period_Maintenance" />
+        </EntityType>
+        <EntityType Name="NBA_PR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PR_SR_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PR_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SR_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="district" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="subdistrict" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="date_entered" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="NBA_Entry_Points" Relationship="Self.FK_NBA_Entry_Points_NBA_PR" FromRole="NBA_PR" ToRole="NBA_Entry_Points" />
+          <NavigationProperty Name="NBA_SYS_Users" Relationship="Self.FK_NBA_SYS_Users_NBA_PR" FromRole="NBA_PR" ToRole="NBA_SYS_Users" />
+        </EntityType>
+        <EntityType Name="NBA_RiskAssessment">
+          <Key>
+            <PropertyRef Name="RISK_ID" />
+          </Key>
+          <Property Name="RISK_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QUESTION_ID" Type="Int32" />
+          <Property Name="ANSWER_ID" Type="Int32" />
+          <Property Name="risk_description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="classification" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SERVICE_PLAN_ID" Type="Int32" />
+          <Property Name="SYS_USER_ID" Type="Int32" />
+          <Property Name="SELF_ASSESS_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="NBA_Role">
+          <Key>
+            <PropertyRef Name="ROLE_ID" />
+          </Key>
+          <Property Name="ROLE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="role_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="role_created_date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="NBA_SYS_Users" Relationship="Self.FK_NBA_SYS_Users_NBA_Role" FromRole="NBA_Role" ToRole="NBA_SYS_Users" />
+        </EntityType>
+        <EntityType Name="NBA_SemesterMaintenance">
+          <Key>
+            <PropertyRef Name="SEMESTER_ID" />
+          </Key>
+          <Property Name="SEMESTER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="semester_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="semester_start_date" Type="DateTime" Precision="3" />
+          <Property Name="semester_end_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="SERVICEPLAN_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="NBA_ServicePlan">
+          <Key>
+            <PropertyRef Name="SERVICEPLAN_ID" />
+          </Key>
+          <Property Name="SERVICEPLAN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="service_plan_description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="DOCUMENT_ID" Type="Int32" />
+          <Property Name="AGWY_ID" Type="Int32" />
+          <Property Name="TASK_ID" Type="Int32" />
+          <Property Name="SYS_USERS_ID" Type="Int32" />
+          <Property Name="SEMESTER_ID" Type="Int32" />
+          <Property Name="RISK_ID" Type="Int32" />
+          <Property Name="CORE_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="NBA_ServicePlanIntervention">
+          <Key>
+            <PropertyRef Name="INTERVENTION_ID" />
+          </Key>
+          <Property Name="INTERVENTION_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="service_ui" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="service_delivery_date" Type="DateTime" Precision="3" />
+          <Property Name="semester_end_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="SEMESTER_ID" Type="Int32" />
+          <Property Name="SYS_USER_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="NBA_Status">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="NBA_SYS_Users">
+          <Key>
+            <PropertyRef Name="SYS_USER_ID" />
+          </Key>
+          <Property Name="SYS_USER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="245" FixedLength="false" Unicode="true" />
+          <Property Name="mobile" Type="Int32" />
+          <Property Name="employee_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="organization" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="district" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="subdistrict" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SR_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Entry_ID" Type="Int32" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sys_IsEmailVerified" Type="Boolean" />
+          <Property Name="sys_VerificationCode" Type="Guid" />
+          <Property Name="reg_date" Type="DateTime" Precision="3" />
+          <Property Name="last_updated" Type="DateTime" Precision="3" />
+          <Property Name="last_login" Type="DateTime" Precision="3" />
+          <Property Name="ROLE_ID" Type="Int32" />
+          <Property Name="ID" Type="Int32" />
+          <NavigationProperty Name="NBA_Agwy" Relationship="Self.FK_NBA_Agwy_NBA_SYS_Users" FromRole="NBA_SYS_Users" ToRole="NBA_Agwy" />
+          <NavigationProperty Name="NBA_PR" Relationship="Self.FK_NBA_SYS_Users_NBA_PR" FromRole="NBA_SYS_Users" ToRole="NBA_PR" />
+          <NavigationProperty Name="NBA_Role" Relationship="Self.FK_NBA_SYS_Users_NBA_Role" FromRole="NBA_SYS_Users" ToRole="NBA_Role" />
+        </EntityType>
+        <EntityType Name="NBA_TaskDiary">
+          <Key>
+            <PropertyRef Name="TASK_ID" />
+          </Key>
+          <Property Name="TASK_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="datetime_scheduled" Type="DateTime" Precision="3" />
+          <Property Name="appointment_length" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="SYS_USER_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="QuizID" Type="Int32" />
+          <NavigationProperty Name="Answers" Relationship="Self.FK_Answers_Answers" FromRole="Questions" ToRole="Answers" />
+          <NavigationProperty Name="Choice" Relationship="Self.FK_Choices_Questions" FromRole="Questions" ToRole="Choices" />
+          <NavigationProperty Name="Quiz" Relationship="Self.FK_Questions_Quiz" FromRole="Questions" ToRole="Quiz" />
+        </EntityType>
+        <EntityType Name="Quiz">
+          <Key>
+            <PropertyRef Name="QuizID" />
+          </Key>
+          <Property Name="QuizID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuizName" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Questions" Relationship="Self.FK_Questions_Quiz" FromRole="Quiz" ToRole="Questions" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProfilImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Answers_Answers">
+          <End Role="Questions" Type="Self.Question" Multiplicity="0..1" />
+          <End Role="Answers" Type="Self.Answer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Answers">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Choices_Questions">
+          <End Role="Questions" Type="Self.Question" Multiplicity="1" />
+          <End Role="Choices" Type="Self.Choice" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Choices">
+              <PropertyRef Name="ChoiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_Agwy">
+          <End Role="NBA_MessageID" Type="Self.NBA_MessageID" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_MessageID">
+              <PropertyRef Name="MessageID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="messageInquiry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_Core">
+          <End Role="NBA_Core" Type="Self.NBA_Core" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Core">
+              <PropertyRef Name="CORE_ID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="Core_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_Documents">
+          <End Role="NBA_Documents" Type="Self.NBA_Documents" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Documents">
+              <PropertyRef Name="DOCUMENT_ID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="DOCUMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_Entry_Points">
+          <End Role="NBA_Entry_Points" Type="Self.NBA_Entry_Points" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Entry_Points">
+              <PropertyRef Name="ENTRY_ID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="EntryPoint_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_Gender">
+          <End Role="NBA_Gender" Type="Self.NBA_Gender" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Gender">
+              <PropertyRef Name="GenderID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_Grade">
+          <End Role="NBA_Grade" Type="Self.NBA_Grade" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Grade">
+              <PropertyRef Name="Grade_ID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="higest_grade_passed" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_HighSchoolQuizz">
+          <End Role="NBA_HighSchoolQuizz" Type="Self.NBA_HighSchoolQuizz" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_HighSchoolQuizz">
+              <PropertyRef Name="HighSchoolQuiz_ID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="HighSchoolQuizz_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_Identification">
+          <End Role="NBA_Identification" Type="Self.NBA_Identification" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Identification">
+              <PropertyRef Name="Identification_ID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="type_of_identification" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_Occupation">
+          <End Role="NBA_Occupation" Type="Self.NBA_Occupation" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Occupation">
+              <PropertyRef Name="Occupation_ID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="currrent_occupation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Agwy_NBA_SYS_Users">
+          <End Role="NBA_SYS_Users" Type="Self.NBA_SYS_Users" Multiplicity="0..1" />
+          <End Role="NBA_Agwy" Type="Self.NBA_Agwy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_SYS_Users">
+              <PropertyRef Name="SYS_USER_ID" />
+            </Principal>
+            <Dependent Role="NBA_Agwy">
+              <PropertyRef Name="SYS_USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_Entry_Points_NBA_PR">
+          <End Role="NBA_PR" Type="Self.NBA_PR" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NBA_Entry_Points" Type="Self.NBA_Entry_Points" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_PR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NBA_Entry_Points">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_period_Maintenance_NBA_period_Maintenance">
+          <End Role="NBA_Period_Maintenance" Type="Self.NBA_Period_Maintenance" Multiplicity="1" />
+          <End Role="NBA_Period_Maintenance1" Type="Self.NBA_Period_Maintenance" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Period_Maintenance">
+              <PropertyRef Name="Period_ID" />
+            </Principal>
+            <Dependent Role="NBA_Period_Maintenance1">
+              <PropertyRef Name="Period_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_SYS_Users_NBA_PR">
+          <End Role="NBA_PR" Type="Self.NBA_PR" Multiplicity="0..1" />
+          <End Role="NBA_SYS_Users" Type="Self.NBA_SYS_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_PR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NBA_SYS_Users">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NBA_SYS_Users_NBA_Role">
+          <End Role="NBA_Role" Type="Self.NBA_Role" Multiplicity="0..1" />
+          <End Role="NBA_SYS_Users" Type="Self.NBA_SYS_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NBA_Role">
+              <PropertyRef Name="ROLE_ID" />
+            </Principal>
+            <Dependent Role="NBA_SYS_Users">
+              <PropertyRef Name="ROLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Questions_Quiz">
+          <End Role="Quiz" Type="Self.Quiz" Multiplicity="0..1" />
+          <End Role="Questions" Type="Self.Question" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quiz">
+              <PropertyRef Name="QuizID" />
+            </Principal>
+            <Dependent Role="Questions">
+              <PropertyRef Name="QuizID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="nlbdataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Answers" EntityType="Self.Answer" />
+          <EntitySet Name="Choices" EntityType="Self.Choice" />
+          <EntitySet Name="NBA_ADMIN" EntityType="Self.NBA_ADMIN" />
+          <EntitySet Name="NBA_Agwy" EntityType="Self.NBA_Agwy" />
+          <EntitySet Name="NBA_Audit_trail" EntityType="Self.NBA_Audit_trail" />
+          <EntitySet Name="NBA_Core" EntityType="Self.NBA_Core" />
+          <EntitySet Name="NBA_Documents" EntityType="Self.NBA_Documents" />
+          <EntitySet Name="NBA_Entry_Points" EntityType="Self.NBA_Entry_Points" />
+          <EntitySet Name="NBA_Gender" EntityType="Self.NBA_Gender" />
+          <EntitySet Name="NBA_Grade" EntityType="Self.NBA_Grade" />
+          <EntitySet Name="NBA_HighSchoolQuizz" EntityType="Self.NBA_HighSchoolQuizz" />
+          <EntitySet Name="NBA_Identification" EntityType="Self.NBA_Identification" />
+          <EntitySet Name="NBA_MessageID" EntityType="Self.NBA_MessageID" />
+          <EntitySet Name="NBA_Occupation" EntityType="Self.NBA_Occupation" />
+          <EntitySet Name="NBA_Period_Maintenance" EntityType="Self.NBA_Period_Maintenance" />
+          <EntitySet Name="NBA_PR" EntityType="Self.NBA_PR" />
+          <EntitySet Name="NBA_RiskAssessment" EntityType="Self.NBA_RiskAssessment" />
+          <EntitySet Name="NBA_Role" EntityType="Self.NBA_Role" />
+          <EntitySet Name="NBA_SemesterMaintenance" EntityType="Self.NBA_SemesterMaintenance" />
+          <EntitySet Name="NBA_ServicePlan" EntityType="Self.NBA_ServicePlan" />
+          <EntitySet Name="NBA_ServicePlanIntervention" EntityType="Self.NBA_ServicePlanIntervention" />
+          <EntitySet Name="NBA_Status" EntityType="Self.NBA_Status" />
+          <EntitySet Name="NBA_SYS_Users" EntityType="Self.NBA_SYS_Users" />
+          <EntitySet Name="NBA_TaskDiary" EntityType="Self.NBA_TaskDiary" />
+          <EntitySet Name="Questions" EntityType="Self.Question" />
+          <EntitySet Name="Quizs" EntityType="Self.Quiz" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Answers_Answers" Association="Self.FK_Answers_Answers">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="Answers" EntitySet="Answers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Choices_Questions" Association="Self.FK_Choices_Questions">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="Choices" EntitySet="Choices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_Agwy" Association="Self.FK_NBA_Agwy_NBA_Agwy">
+            <End Role="NBA_MessageID" EntitySet="NBA_MessageID" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_Core" Association="Self.FK_NBA_Agwy_NBA_Core">
+            <End Role="NBA_Core" EntitySet="NBA_Core" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_Documents" Association="Self.FK_NBA_Agwy_NBA_Documents">
+            <End Role="NBA_Documents" EntitySet="NBA_Documents" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_Entry_Points" Association="Self.FK_NBA_Agwy_NBA_Entry_Points">
+            <End Role="NBA_Entry_Points" EntitySet="NBA_Entry_Points" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_Gender" Association="Self.FK_NBA_Agwy_NBA_Gender">
+            <End Role="NBA_Gender" EntitySet="NBA_Gender" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_Grade" Association="Self.FK_NBA_Agwy_NBA_Grade">
+            <End Role="NBA_Grade" EntitySet="NBA_Grade" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_HighSchoolQuizz" Association="Self.FK_NBA_Agwy_NBA_HighSchoolQuizz">
+            <End Role="NBA_HighSchoolQuizz" EntitySet="NBA_HighSchoolQuizz" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_Identification" Association="Self.FK_NBA_Agwy_NBA_Identification">
+            <End Role="NBA_Identification" EntitySet="NBA_Identification" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_Occupation" Association="Self.FK_NBA_Agwy_NBA_Occupation">
+            <End Role="NBA_Occupation" EntitySet="NBA_Occupation" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Agwy_NBA_SYS_Users" Association="Self.FK_NBA_Agwy_NBA_SYS_Users">
+            <End Role="NBA_SYS_Users" EntitySet="NBA_SYS_Users" />
+            <End Role="NBA_Agwy" EntitySet="NBA_Agwy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_Entry_Points_NBA_PR" Association="Self.FK_NBA_Entry_Points_NBA_PR">
+            <End Role="NBA_PR" EntitySet="NBA_PR" />
+            <End Role="NBA_Entry_Points" EntitySet="NBA_Entry_Points" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_period_Maintenance_NBA_period_Maintenance" Association="Self.FK_NBA_period_Maintenance_NBA_period_Maintenance">
+            <End Role="NBA_Period_Maintenance" EntitySet="NBA_Period_Maintenance" />
+            <End Role="NBA_Period_Maintenance1" EntitySet="NBA_Period_Maintenance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_SYS_Users_NBA_PR" Association="Self.FK_NBA_SYS_Users_NBA_PR">
+            <End Role="NBA_PR" EntitySet="NBA_PR" />
+            <End Role="NBA_SYS_Users" EntitySet="NBA_SYS_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NBA_SYS_Users_NBA_Role" Association="Self.FK_NBA_SYS_Users_NBA_Role">
+            <End Role="NBA_Role" EntitySet="NBA_Role" />
+            <End Role="NBA_SYS_Users" EntitySet="NBA_SYS_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Questions_Quiz" Association="Self.FK_Questions_Quiz">
+            <End Role="Quiz" EntitySet="Quizs" />
+            <End Role="Questions" EntitySet="Questions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MyDatabaseModelStoreContainer" CdmEntityContainer="nlbdataEntities">
+          <EntitySetMapping Name="Answers">
+            <EntityTypeMapping TypeName="MyDatabaseModel.Answer">
+              <MappingFragment StoreEntitySet="Answers">
+                <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+                <ScalarProperty Name="AnswerText" ColumnName="AnswerText" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Choices">
+            <EntityTypeMapping TypeName="MyDatabaseModel.Choice">
+              <MappingFragment StoreEntitySet="Choices">
+                <ScalarProperty Name="ChoiceID" ColumnName="ChoiceID" />
+                <ScalarProperty Name="ChoiceText" ColumnName="ChoiceText" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_ADMIN">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_ADMIN">
+              <MappingFragment StoreEntitySet="NBA_ADMIN">
+                <ScalarProperty Name="ADMIN_ID" ColumnName="ADMIN_ID" />
+                <ScalarProperty Name="Fname" ColumnName="Fname" />
+                <ScalarProperty Name="Lname" ColumnName="Lname" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IsEmailVerified" ColumnName="IsEmailVerified" />
+                <ScalarProperty Name="VerificationCode" ColumnName="VerificationCode" />
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+                <ScalarProperty Name="SYSUSER_ID" ColumnName="SYSUSER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_Agwy">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_Agwy">
+              <MappingFragment StoreEntitySet="NBA_Agwy">
+                <ScalarProperty Name="AGWY_ID" ColumnName="AGWY_ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="known_as" ColumnName="known_as" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="type_of_identification" ColumnName="type_of_identification" />
+                <ScalarProperty Name="idno" ColumnName="idno" />
+                <ScalarProperty Name="dateOfbirth" ColumnName="dateOfbirth" />
+                <ScalarProperty Name="maiden_name" ColumnName="maiden_name" />
+                <ScalarProperty Name="house_number" ColumnName="house_number" />
+                <ScalarProperty Name="street_name" ColumnName="street_name" />
+                <ScalarProperty Name="town_village_address" ColumnName="town_village_address" />
+                <ScalarProperty Name="town_village" ColumnName="town_village" />
+                <ScalarProperty Name="uic" ColumnName="uic" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="alternative_number" ColumnName="alternative_number" />
+                <ScalarProperty Name="alternative_number_relationship" ColumnName="alternative_number_relationship" />
+                <ScalarProperty Name="attended_school" ColumnName="attended_school" />
+                <ScalarProperty Name="name_of_school" ColumnName="name_of_school" />
+                <ScalarProperty Name="grade" ColumnName="grade" />
+                <ScalarProperty Name="higest_grade_passed" ColumnName="higest_grade_passed" />
+                <ScalarProperty Name="currrent_occupation" ColumnName="currrent_occupation" />
+                <ScalarProperty Name="approval_flag" ColumnName="approval_flag" />
+                <ScalarProperty Name="concent_flag" ColumnName="concent_flag" />
+                <ScalarProperty Name="mimetype" ColumnName="mimetype" />
+                <ScalarProperty Name="imagedata" ColumnName="imagedata" />
+                <ScalarProperty Name="describe_living" ColumnName="describe_living" />
+                <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+                <ScalarProperty Name="last_updated" ColumnName="last_updated" />
+                <ScalarProperty Name="last_login" ColumnName="last_login" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SEMESTER_ID" ColumnName="SEMESTER_ID" />
+                <ScalarProperty Name="SYS_USER_ID" ColumnName="SYS_USER_ID" />
+                <ScalarProperty Name="DOCUMENT_ID" ColumnName="DOCUMENT_ID" />
+                <ScalarProperty Name="Core_ID" ColumnName="Core_ID" />
+                <ScalarProperty Name="messageInquiry" ColumnName="messageInquiry" />
+                <ScalarProperty Name="EntryPoint_ID" ColumnName="EntryPoint_ID" />
+                <ScalarProperty Name="HighSchoolQuizz_ID" ColumnName="HighSchoolQuizz_ID" />
+                <ScalarProperty Name="RISK_ID" ColumnName="RISK_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_Audit_trail">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_Audit_trail">
+              <MappingFragment StoreEntitySet="NBA_Audit_trail">
+                <ScalarProperty Name="CHANGE_ID" ColumnName="CHANGE_ID" />
+                <ScalarProperty Name="tablename" ColumnName="tablename" />
+                <ScalarProperty Name="fieldname" ColumnName="fieldname" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+                <ScalarProperty Name="oldvalue" ColumnName="oldvalue" />
+                <ScalarProperty Name="newvalue" ColumnName="newvalue" />
+                <ScalarProperty Name="changedate" ColumnName="changedate" />
+                <ScalarProperty Name="changeby" ColumnName="changeby" />
+                <ScalarProperty Name="SYS_USER_ID" ColumnName="SYS_USER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_Core">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_Core">
+              <MappingFragment StoreEntitySet="NBA_Core">
+                <ScalarProperty Name="CORE_ID" ColumnName="CORE_ID" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="TB_assess" ColumnName="TB_assess" />
+                <ScalarProperty Name="HIV_assess" ColumnName="HIV_assess" />
+                <ScalarProperty Name="Condom_educate" ColumnName="Condom_educate" />
+                <ScalarProperty Name="STI_assess" ColumnName="STI_assess" />
+                <ScalarProperty Name="RISK_ID" ColumnName="RISK_ID" />
+                <ScalarProperty Name="AGWY_ID" ColumnName="AGWY_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_Documents">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_Documents">
+              <MappingFragment StoreEntitySet="NBA_Documents">
+                <ScalarProperty Name="DOCUMENT_ID" ColumnName="DOCUMENT_ID" />
+                <ScalarProperty Name="doc_name" ColumnName="doc_name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="classification" ColumnName="classification" />
+                <ScalarProperty Name="doc_date" ColumnName="doc_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_Entry_Points">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_Entry_Points">
+              <MappingFragment StoreEntitySet="NBA_Entry_Points">
+                <ScalarProperty Name="ENTRY_ID" ColumnName="ENTRY_ID" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="x_cordinates" ColumnName="x_cordinates" />
+                <ScalarProperty Name="y_cordinates" ColumnName="y_cordinates" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_Gender">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_Gender">
+              <MappingFragment StoreEntitySet="NBA_Gender">
+                <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+                <ScalarProperty Name="GenderType" ColumnName="GenderType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_Grade">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_Grade">
+              <MappingFragment StoreEntitySet="NBA_Grade">
+                <ScalarProperty Name="Grade_ID" ColumnName="Grade_ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_HighSchoolQuizz">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_HighSchoolQuizz">
+              <MappingFragment StoreEntitySet="NBA_HighSchoolQuizz">
+                <ScalarProperty Name="HighSchoolQuiz_ID" ColumnName="HighSchoolQuiz_ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_Identification">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_Identification">
+              <MappingFragment StoreEntitySet="NBA_Identification">
+                <ScalarProperty Name="Identification_ID" ColumnName="Identification_ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_MessageID">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_MessageID">
+              <MappingFragment StoreEntitySet="NBA_MessageID">
+                <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_Occupation">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_Occupation">
+              <MappingFragment StoreEntitySet="NBA_Occupation">
+                <ScalarProperty Name="Occupation_ID" ColumnName="Occupation_ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_Period_Maintenance">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_Period_Maintenance">
+              <MappingFragment StoreEntitySet="NBA_Period_Maintenance">
+                <ScalarProperty Name="Period_ID" ColumnName="Period_ID" />
+                <ScalarProperty Name="period_name" ColumnName="period_name" />
+                <ScalarProperty Name="period_start_date" ColumnName="period_start_date" />
+                <ScalarProperty Name="period_end_date" ColumnName="period_end_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="SERVICEPLAN_ID" ColumnName="SERVICEPLAN_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_PR">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_PR">
+              <MappingFragment StoreEntitySet="NBA_PR">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PR_SR_ID" ColumnName="PR_SR_ID" />
+                <ScalarProperty Name="PR_name" ColumnName="PR_name" />
+                <ScalarProperty Name="SR_name" ColumnName="SR_name" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="district" ColumnName="district" />
+                <ScalarProperty Name="subdistrict" ColumnName="subdistrict" />
+                <ScalarProperty Name="date_entered" ColumnName="date_entered" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_RiskAssessment">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_RiskAssessment">
+              <MappingFragment StoreEntitySet="NBA_RiskAssessment">
+                <ScalarProperty Name="RISK_ID" ColumnName="RISK_ID" />
+                <ScalarProperty Name="QUESTION_ID" ColumnName="QUESTION_ID" />
+                <ScalarProperty Name="ANSWER_ID" ColumnName="ANSWER_ID" />
+                <ScalarProperty Name="risk_description" ColumnName="risk_description" />
+                <ScalarProperty Name="classification" ColumnName="classification" />
+                <ScalarProperty Name="SERVICE_PLAN_ID" ColumnName="SERVICE_PLAN_ID" />
+                <ScalarProperty Name="SYS_USER_ID" ColumnName="SYS_USER_ID" />
+                <ScalarProperty Name="SELF_ASSESS_ID" ColumnName="SELF_ASSESS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_Role">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_Role">
+              <MappingFragment StoreEntitySet="NBA_Role">
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+                <ScalarProperty Name="role_name" ColumnName="role_name" />
+                <ScalarProperty Name="role_created_date" ColumnName="role_created_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_SemesterMaintenance">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_SemesterMaintenance">
+              <MappingFragment StoreEntitySet="NBA_SemesterMaintenance">
+                <ScalarProperty Name="SEMESTER_ID" ColumnName="SEMESTER_ID" />
+                <ScalarProperty Name="semester_name" ColumnName="semester_name" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="semester_start_date" ColumnName="semester_start_date" />
+                <ScalarProperty Name="semester_end_date" ColumnName="semester_end_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="SERVICEPLAN_ID" ColumnName="SERVICEPLAN_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_ServicePlan">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_ServicePlan">
+              <MappingFragment StoreEntitySet="NBA_ServicePlan">
+                <ScalarProperty Name="SERVICEPLAN_ID" ColumnName="SERVICEPLAN_ID" />
+                <ScalarProperty Name="service_plan_description" ColumnName="service_plan_description" />
+                <ScalarProperty Name="DOCUMENT_ID" ColumnName="DOCUMENT_ID" />
+                <ScalarProperty Name="AGWY_ID" ColumnName="AGWY_ID" />
+                <ScalarProperty Name="TASK_ID" ColumnName="TASK_ID" />
+                <ScalarProperty Name="SYS_USERS_ID" ColumnName="SYS_USERS_ID" />
+                <ScalarProperty Name="SEMESTER_ID" ColumnName="SEMESTER_ID" />
+                <ScalarProperty Name="RISK_ID" ColumnName="RISK_ID" />
+                <ScalarProperty Name="CORE_ID" ColumnName="CORE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_ServicePlanIntervention">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_ServicePlanIntervention">
+              <MappingFragment StoreEntitySet="NBA_ServicePlanIntervention">
+                <ScalarProperty Name="INTERVENTION_ID" ColumnName="INTERVENTION_ID" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="service_ui" ColumnName="service_ui" />
+                <ScalarProperty Name="service_delivery_date" ColumnName="service_delivery_date" />
+                <ScalarProperty Name="semester_end_date" ColumnName="semester_end_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="SEMESTER_ID" ColumnName="SEMESTER_ID" />
+                <ScalarProperty Name="SYS_USER_ID" ColumnName="SYS_USER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_Status">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_Status">
+              <MappingFragment StoreEntitySet="NBA_Status">
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="StatusValue" ColumnName="StatusValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_SYS_Users">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_SYS_Users">
+              <MappingFragment StoreEntitySet="NBA_SYS_Users">
+                <ScalarProperty Name="SYS_USER_ID" ColumnName="SYS_USER_ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="organization" ColumnName="organization" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="district" ColumnName="district" />
+                <ScalarProperty Name="subdistrict" ColumnName="subdistrict" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="SR_name" ColumnName="SR_name" />
+                <ScalarProperty Name="Entry_ID" ColumnName="Entry_ID" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="sys_IsEmailVerified" ColumnName="sys_IsEmailVerified" />
+                <ScalarProperty Name="sys_VerificationCode" ColumnName="sys_VerificationCode" />
+                <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+                <ScalarProperty Name="last_updated" ColumnName="last_updated" />
+                <ScalarProperty Name="last_login" ColumnName="last_login" />
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBA_TaskDiary">
+            <EntityTypeMapping TypeName="MyDatabaseModel.NBA_TaskDiary">
+              <MappingFragment StoreEntitySet="NBA_TaskDiary">
+                <ScalarProperty Name="TASK_ID" ColumnName="TASK_ID" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="datetime_scheduled" ColumnName="datetime_scheduled" />
+                <ScalarProperty Name="appointment_length" ColumnName="appointment_length" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="SYS_USER_ID" ColumnName="SYS_USER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="MyDatabaseModel.Question">
+              <MappingFragment StoreEntitySet="Questions">
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+                <ScalarProperty Name="QuizID" ColumnName="QuizID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Quizs">
+            <EntityTypeMapping TypeName="MyDatabaseModel.Quiz">
+              <MappingFragment StoreEntitySet="Quiz">
+                <ScalarProperty Name="QuizID" ColumnName="QuizID" />
+                <ScalarProperty Name="QuizName" ColumnName="QuizName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MyDatabaseModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ProfilImage" ColumnName="ProfilImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

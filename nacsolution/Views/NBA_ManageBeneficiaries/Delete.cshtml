@@ -1,0 +1,337 @@
+﻿@model nacsolution.Models.NBA_Agwy
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_PGTAdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>NBA_Agwy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.known_as)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.known_as)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.race)
+        </dt>*@
+
+        @*<dd>
+            @Html.DisplayFor(model => model.race)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateOfbirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateOfbirth)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.place_of_birth)
+        </dt>*@
+
+        @*<dd>
+            @Html.DisplayFor(model => model.place_of_birth)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maiden_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maiden_name)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>*@
+
+        @*<dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.town_village)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.town_village)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.uic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.alternative_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alternative_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.alternative_number_relationship)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alternative_number_relationship)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.attended_school)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.attended_school)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name_of_school)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name_of_school)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.approval_flag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.approval_flag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.concent_flag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.concent_flag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mimetype)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mimetype)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imagedata)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imagedata)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.home_language)
+        </dt>*@
+
+        @*<dd>
+            @Html.DisplayFor(model => model.home_language)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reg_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reg_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.last_updated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.last_updated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.last_login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.last_login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SYS_USER_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SYS_USER_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NBA_Core.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NBA_Core.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NBA_Documents.doc_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NBA_Documents.doc_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NBA_Entry_Points.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NBA_Entry_Points.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NBA_Gender.GenderType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NBA_Gender.GenderType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NBA_Grade.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NBA_Grade.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NBA_HighSchoolQuizz.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NBA_HighSchoolQuizz.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NBA_Identification.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NBA_Identification.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NBA_MessageID.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NBA_MessageID.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NBA_Occupation.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NBA_Occupation.Description)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.NBA_RiskAssessment.risk_description)
+        </dt>*@
+
+        @*<dd>
+            @Html.DisplayFor(model => model.NBA_RiskAssessment.risk_description)
+        </dd>*@
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.NBA_SemesterMaintenance.semester_name)
+        </dt>*@
+
+        @*<dd>
+            @Html.DisplayFor(model => model.NBA_SemesterMaintenance.semester_name)
+        </dd>*@
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.NBA_PR.PR_SR_ID)
+        </dt>*@
+
+        @*<dd>
+            @Html.DisplayFor(model => model.NBA_PR.PR_SR_ID)
+        </dd>*@
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

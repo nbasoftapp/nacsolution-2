@@ -1,0 +1,116 @@
+﻿
+@model nacsolution.Models.NBA_SYS_Users
+
+
+@{
+    /**/
+
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_PGTAdminLayout.cshtml";
+}
+<p>
+    @Html.ActionLink("Back", "Index")
+</p>
+<h2>Interventionist Details</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid groove;
+        }
+    </style>
+</head>
+<body>
+    <table style="width:100%" border="1">
+        <tr>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+
+            <th>
+                @Html.DisplayFor(model => model.employee_id)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.organization)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.province)
+            </th>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.district)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.subdistrict)
+            </th>
+        </tr>
+
+
+
+        <tr>
+
+
+            <td>
+                @Html.DisplayFor(model => model.name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.email)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.employee_id)
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.organization)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.province)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.district)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.subdistrict)
+            </td>
+
+        </tr>
+
+    </table>
+</body>
+
+</html>
+
+<p>
+
+</p>
+<p>
+
+</p>
+<p>
+
+</p>
+<p>
+    <p>
+
+</p>
+<p>
+
+</p>
+
+<div class="form">
+ <center>   <a href='@Url.Action("Create", "NBA_ManageBeneficiaries")' class="btn btn-primary">Continue and register a Beneficiary</a> </center>
+</div>
+
+@*<form action=  @Html.ActionLink("Create New", "Create")>
+    <button type="button" class="btn btn-primary btn-lg"> Create Beneficiary! &raquo;</button>
+</form>*@

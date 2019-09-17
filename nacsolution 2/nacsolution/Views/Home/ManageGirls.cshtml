@@ -1,0 +1,199 @@
+﻿
+@{
+    ViewBag.Title = "ManageGirls";
+}
+
+<h2>ManageGirls</h2>
+
+
+
+
+<link rel="stylesheet "  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Primary Recipients</title>
+    <!------ Include the above in your HEAD tag ---------->
+    <style>
+        span.field-validation-error {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">nacs</a>
+
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Manage Roles", "Index", "Role")</li>
+                    <li>@Html.ActionLink("Manage Users", "Index", "UsersRegistration")</li>
+                    <li>@Html.ActionLink("Manage Sub-Recipients", "Index", "PR")</li>
+                    <li>@Html.ActionLink("Manage Girls", "Index", "ManageGirls")</li>
+
+
+                </ul>
+
+            </div>
+            <span class="icon-bar"></span>
+            <div class="" navbar-collapse collapse"">
+
+            </div>
+        </div>
+    </nav>
+    
+
+
+
+    <div style="width:90%; margin:0 auto" class="tablecontainer">
+        <a class="popup btn btn-primary" href="/home/save/0" style="margin-bottom:20px; margin-top:20px;">Add New Employe</a>
+        <table id="myDatatable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Known-as</th>
+                    <th>Gender</th>
+                    <th>Race</th>
+                    <th>type of identification</th>
+                    <th>ID no</th>
+                    <th>DATE Of Birth</th>
+                    <th>Place of Birth</th>
+                    <th>Maiden Name</th>
+                    <th>Address</th>
+                    <th>Town_Village</th>
+                    <th>UIC</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+
+    <script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $.noConflict();
+            var table = $('#myDatatable').DataTable();
+        });</script>
+
+    <script>
+        $(document).ready(function () {
+            var oTable = $('#myDatatable').DataTable({
+                "ajax": {
+                    "url": '/home/GetGirls',
+                    "type": "get",
+                    "datatype": "json"
+                },
+                "columns": [
+                    { "data": "name", "autoWidth": true },
+                    { "data": "surname", "autoWidth": true },
+                    { "data": "known_as", "autoWidth": true },
+                    { "data": "gender", "autoWidth": true },
+                    { "data": "race", "autoWidth": true },
+                    { "data": "type_of_identification", "autoWidth": true },
+                    { "data": "idno", "autoWidth": true },
+                    { "data": "dateOfbirth", "autoWidth": true },
+                    { "data": "place_of_birth", "autoWidth": true },
+                    { "data": "maiden_name", "autoWidth": true },
+                    { "data": "address", "autoWidth": true },
+                    { "data": "town_village", "autoWidth": true },
+                    { "data": "uic", "autoWidth": true },
+                    {
+                        "data": "AGWY_ID", "width": "50px", "render": function (data) {
+                            return '<a class="popup" href="/home/save/' + data + '">Edit</a>';
+                        }
+                    },
+                    {
+                        "data": "AGWY_ID", "width": "50px", "render": function (data) {
+                            return '<a class="popup" href="/home/delete/' + data + '">Delete</a>';
+                        }
+                    }
+                ]
+            })
+            $('.tablecontainer').on('click', 'a.popup', function (e) {
+                e.preventDefault();
+                OpenPopup($(this).attr('href'));
+            })
+            function OpenPopup(pageUrl) {
+                var $pageContent = $('<div/>');
+                $pageContent.load(pageUrl, function () {
+                    $('#popupForm', $pageContent).removeData('validator');
+                    $('#popupForm', $pageContent).removeData('unobtrusiveValidation');
+                    $.validator.unobtrusive.parse('form');
+
+                });
+
+                $dialog = $('<div class="popupWindow" style="overflow:auto"></div>')
+                    .html($pageContent)
+                    .dialog({
+                        draggable: false,
+                        autoOpen: false,
+                        resizable: false,
+                        model: true,
+                        title: 'Popup Dialog',
+                        height: 550,
+                        width: 600,
+                        close: function () {
+                            $dialog.dialog('destroy').remove();
+                        }
+                    })
+
+                $('.popupWindow').on('submit', '#popupForm', function (e) {
+                    var url = $('#popupForm')[0].action;
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: $('#popupForm').serialize(),
+                        success: function (data) {
+                            if (data.status) {
+                                $dialog.dialog('close');
+                                oTable.ajax.reload();
+                            }
+                        }
+                    })
+
+                    e.preventDefault();
+                })
+                $dialog.dialog('open');
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>
+
+<!-- Main content -->
+
+
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("Logout", "User", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+    }
+}

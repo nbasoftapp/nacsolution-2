@@ -1,0 +1,89 @@
+﻿@model IEnumerable<nacsolution.Models.NBA_Role>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<html>
+<!--
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Manage Roles</title>-->
+<!------ Include the above in your HEAD tag ---------->
+<!--<style>
+    span.field-validation-error {
+        color: red;
+    }
+</style>
+
+</head>
+    -->
+<body>
+    @*<nav class="navbar navbar-inverse navbar-fixed-top">*@
+        @*<div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">nacs</a>
+
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Manage Roles", "Index", "Role")</li>
+                    <li>@Html.ActionLink("Manage Users", "Index", "UsersRegistration")</li>
+                    <li>@Html.ActionLink("Manage Sub-Recipients", "Index", "PR")</li>
+                    <li>@Html.ActionLink("Manage Girls", "Index", "ManageGirls")</li>
+
+
+                </ul>
+
+            </div>
+            <span class="icon-bar"></span>
+            <div class="" navbar-collapse collapse"">
+
+            </div>
+        </div>*@
+    @*</nav>*@
+
+
+    <h2>List Of Roles</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.role_name)*@
+                Role
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.role_created_date)*@
+                Date Created
+            </th>
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.role_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.role_created_date)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ROLE_ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ROLE_ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ROLE_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

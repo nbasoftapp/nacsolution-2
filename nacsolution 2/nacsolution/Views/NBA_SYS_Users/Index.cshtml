@@ -1,0 +1,154 @@
+﻿@model IEnumerable<nacsolution.Models.NBA_SYS_Users>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.surname)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.employee_id)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.organization)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.province)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.district)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subdistrict)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SR_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Entry_ID)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.sys_IsEmailVerified)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sys_VerificationCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.reg_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.last_updated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.last_login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NBA_Role.role_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NBA_PR.PR_SR_ID)
+        </th>
+        <th></th>*@
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.mobile)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.employee_id)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.organization)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.province)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.district)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.subdistrict)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.image)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.SR_name)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.Entry_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.sys_IsEmailVerified)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.sys_VerificationCode)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.reg_date)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.last_updated)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.last_login)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.NBA_Role.role_name)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.NBA_PR.PR_SR_ID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SYS_USER_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SYS_USER_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SYS_USER_ID })
+        </td>
+    </tr>
+}
+
+</table>

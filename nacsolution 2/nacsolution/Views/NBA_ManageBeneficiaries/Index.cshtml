@@ -1,0 +1,294 @@
+﻿@model IEnumerable<nacsolution.Models.NBA_Agwy>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PGTAdminLayout.cshtml";
+}
+
+<h2>List Of Beneficiary</h2>
+
+<p>
+    @Html.ActionLink("Create New", "DetailUser")
+</p>
+<table class="table table-striped table-bordered" >
+    @*<tr>
+        <th><i class="icon_profile"></i> Full Name</th>
+        <th><i class="icon_calendar"></i> Date</th>
+        <th><i class="icon_mail_alt"></i> Email</th>
+        <th><i class="icon_pin_alt"></i> City</th>
+        <th><i class="icon_mobile"></i> Mobile</th>
+        <th><i class="icon_cogs"></i> Action</th>
+    </tr>*@
+
+    <tr class="active">
+        <th>
+            <i class="icon_profile"></i> Full Name
+            @*@Html.DisplayNameFor(model => model.name "Name")*@
+        </th>
+        <th> Surname
+            @*@Html.DisplayNameFor(model => model.surname)*@
+        </th>
+        <th> Known As
+            @*@Html.DisplayNameFor(model => model.known_as)*@
+        </th>
+        <th><i class="icon_id"></i> ID Number
+            @*@Html.DisplayNameFor(model => model.idno)*@
+        </th>
+        <th><i class="icon_calendar"></i> Date Of Birth
+            @*@Html.DisplayNameFor(model => model.dateOfbirth)*@
+        </th>
+        <th><i class="icon_ul"></i> UIC
+            @*@Html.DisplayNameFor(model => model.uic)*@
+        </th>
+
+
+        @*<th>
+            @Html.DisplayNameFor(model => model.place_of_birth)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.maiden_name)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.town_village)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.uic)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.phone_number)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.alternative_number)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.alternative_number_relationship)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.attended_school)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.name_of_school)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.approval_flag)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.concent_flag)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.mimetype)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.imagedata)
+        </th>*@
+      
+        @*<th>
+            @Html.DisplayNameFor(model => model.reg_date)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.last_updated)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.last_login)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.SYS_USER_ID)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.NBA_Core.description)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.NBA_Documents.doc_name)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.NBA_Entry_Points.description)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.NBA_Gender.GenderType)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.NBA_Grade.Description)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.NBA_HighSchoolQuizz.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NBA_Identification.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NBA_MessageID.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NBA_Occupation.Description)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.NBA_RiskAssessment.risk_description)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.NBA_SemesterMaintenance.semester_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NBA_PR.PR_SR_ID)
+        </th>*@
+        <th><i class="icon_cogs"></i> Action</th>
+    </tr>
+     
+        @foreach (var item in Model)
+        {
+    <tr class="success">
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.known_as)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.idno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateOfbirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.uic)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.AGWY_ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.AGWY_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.AGWY_ID })
+        </td>
+        @*<td hidden>
+
+            @Html.DisplayFor(modelItem => item.place_of_birth)
+        </td>*@
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.age)
+        </td>
+
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.maiden_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.house_number)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.town_village)
+        </td>
+
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.phone_number)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.alternative_number)
+        </td>
+        <td hidden>
+
+            @Html.DisplayFor(modelItem => item.alternative_number_relationship)
+        </td>
+        <td hidden>
+            >
+            @Html.DisplayFor(modelItem => item.attended_school)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.name_of_school)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.approval_flag)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.concent_flag)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.mimetype)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.imagedata)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.street_name)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.town_village_address)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.grade)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.describe_living)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.age)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.reg_date)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.last_updated)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.last_login)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.SYS_USER_ID)
+        </td>
+        <td hidden>
+
+            @Html.DisplayFor(modelItem => item.NBA_Core.description)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.NBA_Documents.doc_name)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.NBA_Entry_Points.description)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.NBA_Gender.GenderType)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.NBA_Grade.Description)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.NBA_HighSchoolQuizz.Description)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.NBA_Identification.Description)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.NBA_MessageID.Description)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.NBA_Occupation.Description)
+        </td>
+        @*<td hidden>
+            @Html.DisplayFor(modelItem => item.NBA_RiskAssessment.risk_description)
+        </td>*@
+        @*<td hidden>
+            @Html.DisplayFor(modelItem => item.NBA_SemesterMaintenance.semester_name)
+        </td>*@
+        @*<td hidden>
+            @Html.DisplayFor(modelItem => item.NBA_PR.PR_SR_ID)
+        </td>*@
+
+    </tr>
+        }
+
+</table>

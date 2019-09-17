@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f3c1c125aab141d9bcc737945bfc9fe8" Name="Diagram1">
+        <EntityTypeShape EntityType="MyDatabaseModel.Answer" Width="1.5" PointX="12.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.Choice" Width="1.5" PointX="12.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_ADMIN" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_Agwy" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_Audit_trail" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_Core" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_Documents" Width="1.5" PointX="3" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_Entry_Points" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_Gender" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_Grade" Width="1.5" PointX="3" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_HighSchoolQuizz" Width="1.5" PointX="3" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_Identification" Width="1.5" PointX="3" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_MessageID" Width="1.5" PointX="3" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_Occupation" Width="1.5" PointX="3" PointY="32.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_Period_Maintenance" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_PR" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_RiskAssessment" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_Role" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_SemesterMaintenance" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_ServicePlan" Width="1.5" PointX="11.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_ServicePlanIntervention" Width="1.5" PointX="13.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_Status" Width="1.5" PointX="13.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_SYS_Users" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.NBA_TaskDiary" Width="1.5" PointX="13.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.Question" Width="1.5" PointX="10" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.Quiz" Width="1.5" PointX="7.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.User" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="MyDatabaseModel.FK_Answers_Answers" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDatabaseModel.FK_Choices_Questions" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDatabaseModel.FK_NBA_Agwy_NBA_Agwy" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDatabaseModel.FK_NBA_Agwy_NBA_Core" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDatabaseModel.FK_NBA_Agwy_NBA_Documents" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDatabaseModel.FK_NBA_Agwy_NBA_Entry_Points" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDatabaseModel.FK_NBA_Agwy_NBA_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDatabaseModel.FK_NBA_Agwy_NBA_Grade" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDatabaseModel.FK_NBA_Agwy_NBA_HighSchoolQuizz" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDatabaseModel.FK_NBA_Agwy_NBA_Identification" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDatabaseModel.FK_NBA_Agwy_NBA_Occupation" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDatabaseModel.FK_NBA_Agwy_NBA_SYS_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDatabaseModel.FK_NBA_Entry_Points_NBA_PR" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDatabaseModel.FK_NBA_period_Maintenance_NBA_period_Maintenance" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDatabaseModel.FK_NBA_SYS_Users_NBA_PR" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDatabaseModel.FK_NBA_SYS_Users_NBA_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDatabaseModel.FK_Questions_Quiz" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

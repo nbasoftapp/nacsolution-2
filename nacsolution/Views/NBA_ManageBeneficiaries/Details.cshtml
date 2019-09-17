@@ -1,0 +1,343 @@
+﻿@model nacsolution.Models.NBA_Agwy
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_PGTAdminLayout.cshtml";
+}
+
+
+
+
+
+
+
+
+<div>
+    @*<h4>Beneficiary Details</h4>*@
+    <div class="text-info text-center">
+        <h3> UIC: @Html.DisplayFor(model => model.uic)</h3>
+    </div>
+    <hr />
+    <div class="panel-body bio-graph-info">
+        <dl class="dl-horizontal">
+            <div class="row">
+                @*<div class="text-info text-center">*@
+                <h2> Beneficiary Details </h2>
+                @*</div>*@
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            @*<dt>*@
+                            Name
+                        </span>:
+
+                        @*</dt>*@
+
+                        @*<dd>*@
+
+                        @Html.DisplayFor(model => model.name)
+
+                        @*</dd>*@
+                    </p>
+                </div>
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            @*<dt>*@
+                            Surname
+                        </span>:
+                        @*@Html.DisplayNameFor(model => model.name)*@
+                        @*</dt>*@
+
+                        @*<dd>*@
+                        @Html.DisplayFor(model => model.surname)
+
+                        @*</dd>*@
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            @*<dt>*@
+                            Known- As
+                        </span>:
+
+                        @*</dt>*@
+
+                        @*<dd>*@
+                        @Html.DisplayFor(model => model.known_as)
+                        @*</dd>*@
+                    </p>
+                </div>
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Age
+                        </span>:
+
+
+                        @Html.DisplayFor(model => model.age)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Identity Number
+                        </span>:
+                        @Html.DisplayFor(model => model.idno)
+                    </p>
+                </div>
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Date Of Birth
+                        </span>:
+                        @Html.DisplayFor(model => model.dateOfbirth)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Maiden Mother Name
+                        </span>:
+
+
+                        @Html.DisplayFor(model => model.maiden_name)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            House Number
+                        </span>:
+
+                        @Html.DisplayFor(model => model.house_number)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Street Name
+
+                        </span>:
+                        @Html.DisplayFor(model => model.street_name)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Town or Village
+                        </span>:
+
+
+                        @Html.DisplayFor(model => model.town_village)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            UIC
+                        </span>:
+                        @Html.DisplayFor(model => model.uic)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Email Address
+                        </span>:
+                        @Html.DisplayFor(model => model.email)
+                    </p>
+                </div>
+
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Phone Number
+                        </span>:
+                        @Html.DisplayFor(model => model.phone_number)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Alternative Number
+                        </span>:
+                        @Html.DisplayFor(model => model.alternative_number)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Relation with Alternative Number
+                        </span>:
+                        @Html.DisplayFor(model => model.alternative_number_relationship)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Attended School
+                        </span>:
+                        @Html.DisplayFor(model => model.attended_school)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Name of School
+                        </span>:
+                        @Html.DisplayFor(model => model.name_of_school)
+                    </p>
+                </div>
+
+
+
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Registration Date
+                        </span>:
+                        @Html.DisplayFor(model => model.reg_date)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Last Updated
+                        </span>:
+                        @Html.DisplayFor(model => model.last_updated)
+                    </p>
+                </div>
+
+                @*<dt>
+            @Html.DisplayNameFor(model => model.last_login)
+        </dt>*@
+
+                @*<dd>
+            @Html.DisplayFor(model => model.last_login)
+        </dd>*@
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Status
+                        </span>:
+
+
+
+                        @Html.DisplayFor(model => model.status)
+                    </p>
+                </div>
+
+                @*<dt>
+            @Html.DisplayNameFor(model => model.SYS_USER_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SYS_USER_ID)
+        </dd>*@
+
+
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Entry Point
+                        </span>:
+                        @Html.DisplayFor(model => model.NBA_Entry_Points.description)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Gender Type
+                        </span>:
+                        @Html.DisplayFor(model => model.NBA_Gender.GenderType)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Grade Description
+                        </span>:
+
+
+                        @Html.DisplayFor(model => model.NBA_Grade.Description)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            High School Question
+                        </span>:
+                        @Html.DisplayFor(model => model.NBA_HighSchoolQuizz.Description)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Identification
+                        </span>:
+
+                        @Html.DisplayFor(model => model.NBA_Identification.Description)
+                    </p>
+                </div>
+
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            Messaging
+
+                        </span>:
+
+                        @Html.DisplayFor(model => model.NBA_MessageID.Description)
+                    </p>
+                </div>
+
+                <div class="bio-row">
+                    <p>
+                        <span>
+                            What you doing
+                        </span>:
+                        @Html.DisplayFor(model => model.NBA_Occupation.Description)
+                    </p>
+                </div>
+
+
+                @*<dt>
+            @Html.DisplayNameFor(model => model.NBA_PR.PR_SR_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NBA_PR.PR_SR_ID)
+        </dd>*@
+            </div>
+
+    </dl>
+</div>
+    </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AGWY_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
